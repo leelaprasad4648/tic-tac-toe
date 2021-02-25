@@ -1,0 +1,68 @@
+$font-color: #424242;
+$label-color: #424242;
+$place-holder-color: #C4C2C6;
+$error-text-color: #EB5757;
+$border-color: #EBE9EC;
+$disabled-background: #F5F4F5;
+$active-border-color: #322E37;
+
+.input-row {
+    ::placeholder {
+        color: $place-holder-color;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    label {
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 16px;
+        color: $label-color;
+        text-transform: capitalize;
+        padding-left: 11px;
+    }
+
+    .login-input {
+        color: #1A1A1A;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid $border-color;
+        border-radius: 0;
+
+        &:active , &:focus, :visited {
+            -webkit-box-shadow: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid $active-border-color;
+        }
+
+        &:disabled {
+            background: $disabled-background;
+            border-color: $border-color;
+            &::placeholder {
+                color: $label-color;
+            }
+        }
+    }
+}
+
+.input-row::placeholder {
+    color: $font-color;
+}
+
+.helper-text {
+    color: $error-text-color;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px 0;
+}
+
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+    -webkit-box-shadow: 0 0 0 1px $active-border-color;
+    box-shadow: 0 0 0 1px $active-border-color;
+}

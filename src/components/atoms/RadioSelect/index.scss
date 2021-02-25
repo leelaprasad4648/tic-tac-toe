@@ -1,0 +1,50 @@
+$font-color: #424242;
+$label-color: #424242;
+$place-holder-color: #C4C2C6;
+$error-text-color: #EB5757;
+$border-color: #EBE9EC;
+$disabled-background: #F5F4F5;
+$active-border-color: #322E37;
+
+.radio-select {
+    ::placeholder {
+        color: $place-holder-color;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    label {
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 16px;
+        color: $label-color;
+        text-transform: capitalize;
+        padding-left: 11px;
+    }
+}
+
+.helper-text {
+    color: $error-text-color;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px 0;
+}
+
+.selectedCheckboxOption {
+    border: none;
+    border-bottom: 2px solid $border-color;
+    border-radius: 0;
+    color: #1A1A1A;
+    background: transparent;
+    cursor: pointer;
+    padding-left: 11px;
+    
+}
+
+.radio-select-label {
+    margin-bottom: 10px;
+}

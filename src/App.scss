@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .app-container{
+    min-height: 100vh;
+  }
+
+  .container {
+    background-color: #CED2DC;
+  }
+
+.page-container {
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 48px;
+}
+
+.ant-radio-group {
+  width: 100%;
+}
+
+.ant-radio-group-outline {
+  width: 100%;
+}
+
+.ant-radio-wrapper {
+  margin-bottom: 10px;
+}
+
+.ant-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ant-avatar > img {
+  object-fit: scale-down;
+}
