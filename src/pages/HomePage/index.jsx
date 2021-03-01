@@ -6,6 +6,7 @@ import One from '../../assets/one.png';
 import Two from '../../assets/two.png';
 import Training from '../../assets/training.png';
 import Online from '../../assets/online.png';
+import InARow from '../../assets/4inarow.png';
 import './index.scss'
 
 const RenderIcon = (image, altText) => {
@@ -28,6 +29,18 @@ const HomePage = (props) => {
                     </div>
                 </div>
                 <div className="card-container-with-footer">
+                    <Row>
+                        <Col xs={24} md={12} className="play-logo-container">
+                            <div className="rectangle-play">
+                                Play
+                            </div>
+                        </Col>
+                        <Col xs={24} md={12}>
+                            <div className="home-image-container">
+                                <img src={InARow} alt="game" className="image-position-absolute"/>
+                            </div>
+                        </Col>
+                    </Row>
                     <div className="home-page-content">
                         <Row gutter={30} className="game-play-options-row">
                             <Col xs={24} md={12} >

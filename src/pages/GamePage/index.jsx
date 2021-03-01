@@ -49,10 +49,17 @@ class GamePage extends React.Component {
     }
 
     componentDidMount() {
+        const whoStarts = localStorage.getItem('whoStarts');
+        let isXFirst;
+        switch (whoStarts) {
+            case 'Player2': isXFirst = false; break;
+            default: isXFirst = true; break;
+        }
         this.setState({
             totalGames: Number(localStorage.getItem('totalGames')),
             player1: localStorage.getItem('player1'),
-            player2: localStorage.getItem('player2')
+            player2: localStorage.getItem('player2'),
+            xIsNext: isXFirst
         })
     }
 
@@ -124,8 +131,18 @@ class GamePage extends React.Component {
     }
 
     clearBoard =(winner) => {
+        let xStartsNext;
+        const gameSelectionPerson = localStorage.getItem('whoStarts');
+        switch(gameSelectionPerson) {
+            case 'Player1': xStartsNext = true; break;
+            case 'Player2': xStartsNext = false; break;
+            case 'Alternate': xStartsNext = this.state.currentGame %2 === 0 ? true : false; break;
+            case 'Winner': xStartsNext = winner === 'X' ? true : false; break;
+            case 'Looser': xStartsNext = winner === 'X' ? false : true; break;
+            default: xStartsNext = true; break;
+        }
         this.setState({
-            xIsNext: true,
+            xIsNext: xStartsNext,
             history: [{
                 squares: Array(9).fill(null)
             }],
@@ -158,8 +175,8 @@ class GamePage extends React.Component {
                                 </div>
                                 {winner && <div className="congratulations-heading">Congratulations!</div>}
                                 <div className="current-game">
-                                    {(winner && !seriesWinner) && `${winner}, you won the game`}
-                                    {seriesWinner &&  'You won the tournament'}
+                                    {(winner && !seriesWinner) && `${winner === 'X' ? player1: player2}, you won the game`}
+                                    {seriesWinner &&  `${player1Wins > player2Wins ? player1 : player2}, You won the tournament`}
                                     {(!winner && !seriesWinner)  && `Playing Game ${currentGame}`}
                                 </div>
                             </div>

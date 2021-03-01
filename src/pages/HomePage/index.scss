@@ -45,3 +45,47 @@
 .footer {
     margin: 50px 50px 0 50px;
 }
+
+.image-position-absolute {
+    @media screen and (min-width: 576px) {
+        position: absolute;
+        top: -100px;
+    }
+    @media screen and (min-width: 769px) {
+        position: absolute;
+        top: -150px;
+        right: -150px;
+    }
+    @media screen and (max-width: 769px) {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.home-image-container {
+    @media screen and (min-width: 576px) {
+        margin-bottom: 300px;
+    }
+    @media screen and (min-width: 769px) {
+        margin-bottom: 500px;
+    }
+}
+
+.play-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle-play {
+    background: #FF7243 0% 0% no-repeat padding-box;
+    box-shadow: 10px 10px 50px #FF724373;
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #424242;
+    font-size: 22px;
+}
